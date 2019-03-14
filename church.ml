@@ -35,6 +35,16 @@ let pred = fun n -> snd (n (fun p -> pair (succ (fst p)) (fst p)) (pair zero zer
 
 let fac_fun = fun fac n -> ite (is_zero n) one (mult n (fac (pred n))) in
 
+(* approximations of fatorial obtained from fac_fun *)
+let fac0 = fun n -> 0 in
+let fac1 = fac_fun fac0 in
+let fac2 = fac_fun fac1 in
+let fac3 = fac_fun fac2 in
+let fac4 = fac_fun fac3 in
+
+(* fac4 compues the correct value for n=0..3 *)
+
+(* The Y combinator (for applicative-order evaluation strategy) *)
 let fix =
   fun f ->
     (fun x ->
@@ -42,6 +52,7 @@ let fix =
       (fun x -> f (fun n f y -> (x x) n f y))
 in
 
+(* Define fac as fixpoint of fac_fun *)
 let fac = fix fac_fun in
 
 to_int (fac five)
