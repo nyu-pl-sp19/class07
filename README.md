@@ -208,7 +208,7 @@ OCaml:
 
 ```ocaml
 let f x =
-  let g y = y in
+  let g y = x y in
   g
 in
 let h x = y in
