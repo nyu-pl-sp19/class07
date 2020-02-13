@@ -1,6 +1,6 @@
 ﻿# Class 7
 
-Functional languages in draw heavily on the *λ-calculus* (lambda
+Functional languages draw heavily on the *λ-calculus* (lambda
 calculus) for inspiration. To understand how functional programming
 works in general, it is therefore helpful to study this very basic
 calculus.
